@@ -1,7 +1,45 @@
-<md-content layout-padding>
-	<h1 class = "md-headline">Mockups</h1>
-	<md-divider></md-divider>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi illum ipsa nulla, quaerat quam quis.
-		At autem ducimus eligendi impedit nesciunt? Commodi consectetur dicta facilis iste labore quas sit.
-	</p>
-</md-content>
+<div layout = "column" layout-align = "space-between" layout-margin>
+	<div layout = "row" layout-align = "center center">
+		<md-card flex-gt-xs = "40" flex = "90" ng-if = "!$ctrl.showInputs">
+			<md-card-content>
+				<p id = "create-text" class = "md-body-1" ng-click = "$ctrl.changeViewInputs()">
+					Crear una nota...
+				</p>
+			</md-card-content>
+		</md-card>
+		<md-card flex-gt-xs = "40" flex = "90" ng-if = "$ctrl.showInputs" id = "form-new-note" ng-mouseleave =
+				"$ctrl.changeViewInputs('hide')" tabindex = "-1">
+			<md-card-content>
+				<md-input-container md-no-float class = "md-block">
+					<input value = "" placeholder = "Título" id = "input-title" autocomplete = "off">
+				</md-input-container>
+
+				<md-input-container md-no-float class = "md-block">
+					<input value = "" placeholder = "Escribe tu nota..." id = "input-text" autocomplete = "off">
+				</md-input-container>
+			</md-card-content>
+			<md-card-actions layout = "row" layout-align = "start center">
+				<md-card-icon-actions>
+					<md-button class = "md-icon-button" aria-label = "Favorite">
+						<ng-md-icon icon = "color_lens" style = "fill: #bdbdbd"></ng-md-icon>
+					</md-button>
+					<md-button class = "md-icon-button" aria-label = "Share">
+						<ng-md-icon icon = "image" style = "fill: #bdbdbd"></ng-md-icon>
+					</md-button>
+				</md-card-icon-actions>
+				<md-button>Listo</md-button>
+			</md-card-actions>
+		</md-card>
+	</div>
+
+	<div layout = "row" layout-align = "center center">
+		<div flex-gt-xs = "60" flex = "90">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi illum ipsa nulla, quaerat quam
+				quis.
+				At autem ducimus eligendi impedit nesciunt? Commodi consectetur dicta facilis iste labore quas sit.
+			</p>
+		</div>
+	</div>
+</div>
+
+

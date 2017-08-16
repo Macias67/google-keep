@@ -1,0 +1,29 @@
+md-card#form-new-note {
+  md-card-content {
+    md-input-container {
+      margin: 2px 0;
+
+      input.md-input {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      input#input-title {
+        font-weight: 700;
+      }
+
+      input#input-text {
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+      }
+
+      div.md-errors-spacer {
+        display: none;
+      }
+    }
+
+    .md-input {
+      border-color: transparent;
+    }
+  }
+}
+

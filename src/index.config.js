@@ -2,7 +2,7 @@
 const config = ($mdThemingProvider) => {
 
     $mdThemingProvider.theme('GKeep')
-        .primaryPalette('green')
+        .primaryPalette('amber')
         .accentPalette('grey', {
             'default': '800'
         });

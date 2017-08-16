@@ -7,7 +7,7 @@ const home = angular
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('home', {
-                url: '/home',
+                url: '/',
                 component: 'home'
             });
         $urlRouterProvider.otherwise('/');
