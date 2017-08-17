@@ -1,4 +1,4 @@
-## Google Keep Protoype
+## Google Keep Prototype
 
 Prototipo de Google Keep con Angular Material y WebPack para Lüphole
 
