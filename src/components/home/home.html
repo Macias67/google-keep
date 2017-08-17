@@ -1,21 +1,22 @@
 <div layout = "column" layout-align = "space-between" layout-margin>
-	<div layout = "row" layout-align = "center center">
-		<md-card flex-gt-xs = "40" flex = "90" ng-if = "!$ctrl.showInputs">
+	<div layout = "row" layout-fill layout-align = "center center">
+		<md-card flex-gt-xs = "40" flex = "66" ng-if = "!$ctrl.showInputs">
 			<md-card-content>
 				<p id = "create-text" class = "md-body-1" ng-click = "$ctrl.changeViewInputs()">
 					Crear una nota...
 				</p>
 			</md-card-content>
 		</md-card>
-		<md-card flex-gt-xs = "40" flex = "90" ng-if = "$ctrl.showInputs" id = "form-new-note" ng-mouseleave =
-				"$ctrl.changeViewInputs('hide')" tabindex = "-1">
+		<md-card flex-gt-xs = "40" flex = "66" ng-if = "$ctrl.showInputs" id = "form-new-note">
 			<md-card-content>
 				<md-input-container md-no-float class = "md-block">
-					<input value = "" placeholder = "Título" id = "input-title" autocomplete = "off">
+					<input ng-model = "$ctrl.notaNueva.title" placeholder = "Título" id = "input-title" autocomplete =
+							"off">
 				</md-input-container>
 
 				<md-input-container md-no-float class = "md-block">
-					<input value = "" placeholder = "Escribe tu nota..." id = "input-text" autocomplete = "off">
+					<input ng-model = "$ctrl.notaNueva.text" placeholder = "Escribe tu nota..." id = "input-text"
+						   autocomplete = "off">
 				</md-input-container>
 			</md-card-content>
 			<md-card-actions layout = "row" layout-align = "start center">
@@ -27,17 +28,27 @@
 						<ng-md-icon icon = "image" style = "fill: #bdbdbd"></ng-md-icon>
 					</md-button>
 				</md-card-icon-actions>
-				<md-button>Listo</md-button>
+				<md-button ng-click = "$ctrl.addNote()">Listo</md-button>
 			</md-card-actions>
 		</md-card>
 	</div>
 
-	<div layout = "row" layout-align = "center center">
-		<div flex-gt-xs = "60" flex = "90">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi illum ipsa nulla, quaerat quam
-				quis.
-				At autem ducimus eligendi impedit nesciunt? Commodi consectetur dicta facilis iste labore quas sit.
-			</p>
+	<div layout = "row" layout-fill layout-align = "center center">
+		<div layout = "row" layout-align = "center start" layout-wrap flex = "80" id = "cards-layout">
+			<md-card flex = "20" ng-repeat = "nota in $ctrl.notas">
+				<md-card-title>{{nota.title}}</md-card-title>
+				<md-card-content ng-class = "{'short' : (nota.text.length < 20)}">{{nota.text}}</md-card-content>
+				<md-card-actions layout = "row" layout-align = "end center">
+					<md-card-icon-actions>
+						<md-button class = "md-icon-button" aria-label = "Editar" ng-click = "$ctrl.editNote(nota.id)">
+							<ng-md-icon icon = "mode_edit" style = "fill: #bdbdbd" size = "20"></ng-md-icon>
+						</md-button>
+						<md-button class = "md-icon-button" aria-label = "Borrar" ng-click = "$ctrl.deleteNote(nota.id)">
+							<ng-md-icon icon = "delete" style = "fill: #bdbdbd" size = "20"></ng-md-icon>
+						</md-button>
+					</md-card-icon-actions>
+				</md-card-actions>
+			</md-card>
 		</div>
 	</div>
 </div>

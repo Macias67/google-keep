@@ -27,3 +27,26 @@ md-card#form-new-note {
   }
 }
 
+div#cards-layout {
+  margin-top: 20px;
+
+  md-card {
+    md-card-title {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      padding: 15px 10px 10px;
+    }
+
+    md-card-content {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    md-card-content.short {
+      font-size: 2em;
+      font-weight: 300;
+    }
+  }
+}
+

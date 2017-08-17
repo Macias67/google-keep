@@ -7,11 +7,15 @@ class NavController {
     }
 
     $onInit() {
-
+        this.query = "";
     }
 
     togglemenu(menu) {
         this.$mdSidenav(menu).toggle();
+    }
+
+    search() {
+        console.log(this.notas)
     }
 }
 

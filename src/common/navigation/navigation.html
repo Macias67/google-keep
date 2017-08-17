@@ -1,20 +1,20 @@
-<div layout = "row" layout-fill ng-cloak>
-	<section layout = "column" role = "main">
+<div layout = "row" ng-cloak>
+	<section layout = "column" layout-fill role = "main">
 		<md-toolbar role = "toolbar">
-			<div class = "md-toolbar-tools">
+			<div class = "md-toolbar-tools" layout-align = "center center">
 				<md-button class = "md-icon-button" ng-click = "$ctrl.togglemenu('left')" aria-label = "Menu">
 					<ng-md-icon icon = "menu" style = "fill: white"></ng-md-icon>
 				</md-button>
 
 				<h4 class = "md-title"><b>Google</b> <span class = "md-caption">Keep</span></h4>
-
 				<span flex></span>
+				<div md-color-picker ng-model = "$ctrl.valueObj"></div>
 			</div>
 		</md-toolbar>
 
 		<section id = "content" role = "content">
 			<md-sidenav class = "md-sidenav-left" md-component-id = "left" md-whiteframe = "4"></md-sidenav>
-			<div ui-view></div>
+			<ui-view></ui-view>
 		</section>
 	</section>
 </div>
